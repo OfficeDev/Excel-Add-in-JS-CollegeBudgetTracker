@@ -3,7 +3,7 @@
 _Applies to: Excel 2016_ 
 
 This task pane add-in shows how to create a college budget tracker using the JavaScript APIs in Excel 2016. It comes in two flavors: text editor and Visual Studio.
-![College Budget Tracker Sample](images/CollegeBudgetTracker_report.png)
+![College Budget Tracker Sample](images/CollegeBudgetTracker_tracker.png)
 
 ## Try it out
 ### Text editor version
@@ -24,15 +24,16 @@ This task pane add-in shows how to create a college budget tracker using the Jav
     1.  On the Insert tab in Excel 2016, choose My Add-ins. 
     2.  In the Office Add-ins dialog box, choose Shared Folder.
     3.  Choose College Budget Tracker Sample, and then choose Insert.
-    4.  The add-in will create the college budget tracker in the active sheet and provide a UI to enter expenses and income in the task pane as shown in this diagram. ![College Budget Tracker Sample](images/CollegeBudgetTracker_full.png) 
-		Note: Resize all the columns in the worksheet to see the chart and all of the data. We will have APIs shortly to resize columns automatically.
-    5. Play with the tracker by entering some new expenses and income using the task pane and see the chart and the tables get updated dynamically!
+    4.  The add-in will create the college budget tracker in the active sheet and provide a UI to enter expenses and income in the task pane as shown in this diagram. ![College Budget Tracker Sample](images/CollegeBudgetTracker_taskpane.png) 	
+        Note: Resize all the columns in the worksheet to see the chart and all of the data. We will have APIs shortly to resize columns automatically.
+    5. Play with the tracker by entering some new expenses and income using the task pane and see the chart and the tables get updated dynamically! ![College Budget Tracker Sample](images/CollegeBudgetTracker_tracker.png)
 
 ### Visual Studio version
 1.  Copy the project to a local folder. Then open the Excel-Add-in-JS-CollegeBudgetTracker.sln in Visual Studio.
-2. Press F5 to build and deploy the sample add-in. This will launch Excel 2016 with the add-in loaded in the task pane. The add-in will create the college budget tracker in the active sheet and provide a UI to enter expenses and income in the task pane as shown in this diagram. ![College Budget Tracker Sample](images/CollegeBudgetTracker_full.png) 
+2. Press F5 to build and deploy the sample add-in. This will launch Excel 2016 with the add-in loaded in the task pane. The add-in will create the college budget tracker in the active sheet and provide a UI to enter expenses and income in the task pane as shown in this diagram. ![College Budget Tracker Sample](images/CollegeBudgetTracker_taskpane.png) 
+   
    Note: Resize all the columns in the worksheet to see the chart and all of the data. We will have APIs shortly to resize columns automatically.
-3. Play with the tracker by entering some new expenses and income using the task pane and see the chart and the tables get updated dynamically!
+3. Play with the tracker by entering some new expenses and income using the task pane and see the chart and the tables get updated dynamically!![College Budget Tracker Sample](images/CollegeBudgetTracker_tracker.png)
 
 
 
