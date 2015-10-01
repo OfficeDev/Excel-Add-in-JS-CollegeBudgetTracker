@@ -17,7 +17,7 @@
 			$('#add-income').click(addIncome);
 
 		    // If not using Excel 2016, return
-			if (Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
+			if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
 			    app.showNotification("Need Office 2016 or greater", "Sorry, this app only works with newer versions of Excel.");
 			    return;
 			}
