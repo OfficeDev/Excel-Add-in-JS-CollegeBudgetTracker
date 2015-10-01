@@ -7,12 +7,18 @@
 	// The initialize function must be run each time a new page is loaded
 	Office.initialize = function (reason) {
 		$(document).ready(function () {
-			app.initialize();
+		    app.initialize();
 
 			$("#tabs").tabs();
 			$(".click-button").button();
 			$('#add-expense').click(addExpense);
 			$('#add-income').click(addIncome);
+
+		    // If not using Excel 2016, return
+			if (Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
+			    app.showNotification("Need Office 2016 or greater", "Sorry, this app only works with newer versions of Excel.");
+			    return;
+			}
 
 			createBudgetAnalyzer();
 		});
@@ -48,6 +54,7 @@
 			var tableRows = expenseTable.rows;
 
 			tableRows.add(null, [["Rent", "$600", "Housing"]]);
+			tableRows.add(null, [["Movie Club", "$75", "Entertainment"]]);
 			tableRows.add(null, [["Food", "$450", "Food"]]);
 			tableRows.add(null, [["Car", "$150", "Transportation"]]);
 			tableRows.add(null, [["Tuition", "$800", "School costs"]]);
@@ -133,26 +140,27 @@
 			var moneyOutValues = [["Money going out", ""],
 								  ["Category", "Cost"],
 								  ["School costs", '=IFERROR(SUMIFS(B117:B217,C117:C217,C20),"")'],
-								  ["Food", '=IFERROR(SUMIFS(B117:B217,C117:C217,C21),"")'],
-								["Housing", '=IFERROR(SUMIFS(B117:B217,C117:C217,C22),"")'],
-								  ["Transportation", '=IFERROR(SUMIFS(B117:B217,C117:C217,C23),"")'],
-								  ["Loans/Payments", '=IFERROR(SUMIFS(B117:B217,C117:C217,C24),"")'],
-								  ["Other", '=IFERROR(SUMIFS(B117:B217,C117:C217,C25),"")'],
-								  ["Total", "=sum(D20:D25)"]];
+								  ["Entertainment", '=IFERROR(SUMIFS(B117:B217,C117:C217,C21),"")'],
+								  ["Food", '=IFERROR(SUMIFS(B117:B217,C117:C217,C22),"")'],
+								["Housing", '=IFERROR(SUMIFS(B117:B217,C117:C217,C23),"")'],
+								  ["Transportation", '=IFERROR(SUMIFS(B117:B217,C117:C217,C24),"")'],
+								  ["Loans/Payments", '=IFERROR(SUMIFS(B117:B217,C117:C217,C25),"")'],
+								  ["Other", '=IFERROR(SUMIFS(B117:B217,C117:C217,C26),"")'],
+								  ["Total", "=sum(D20:D26)"]];
 			
 			// Set the number format before setting the values
-			dashboardSheet.getRange("D19:D26").numberFormat = "$#";
-			dashboardSheet.getRange("C18:D26").values = moneyOutValues;
+			dashboardSheet.getRange("D19:D27").numberFormat = "$#";
+			dashboardSheet.getRange("C18:D27").values = moneyOutValues;
 			dashboardSheet.getRange("C18:D18").format.font.size = 18;
 			dashboardSheet.getRange("C18:D18").format.font.color = "red";
-			dashboardSheet.getRange("C18:D26").format.font.name = "Rockwell";
+			dashboardSheet.getRange("C18:D27").format.font.name = "Rockwell";
 			dashboardSheet.getRange("C19:D19").format.font.size = 13;;
-			dashboardSheet.getRange("C20:D25").format.font.size = 10;
-			dashboardSheet.getRange("C18:D26").format.borders.getItem("InsideHorizontal").style = "Continuous";
-			dashboardSheet.getRange("C18:D26").format.borders.getItem('EdgeBottom').style = 'Continuous';
-			dashboardSheet.getRange("C18:D26").format.borders.getItem('EdgeTop').style = 'Continuous';
-			dashboardSheet.getRange("C26:D26").format.font.size = 13;
-			dashboardSheet.getRange("C26:D26").format.font.name = "Rockwell";
+			dashboardSheet.getRange("C20:D26").format.font.size = 10;
+			dashboardSheet.getRange("C18:D27").format.borders.getItem("InsideHorizontal").style = "Continuous";
+			dashboardSheet.getRange("C18:D27").format.borders.getItem('EdgeBottom').style = 'Continuous';
+			dashboardSheet.getRange("C18:D27").format.borders.getItem('EdgeTop').style = 'Continuous';
+			dashboardSheet.getRange("C27:D27").format.font.size = 13;
+			dashboardSheet.getRange("C27:D27").format.font.name = "Rockwell";
 
 			// Queue commands to create the income chart
 			var incomeChartDataRange = dashboardSheet.getRange("C10:D14");
