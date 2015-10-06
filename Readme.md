@@ -2,12 +2,12 @@
 
 _Applies to: Excel 2016_
 
-This task pane add-in shows how to create a college budget tracker using the JavaScript APIs in Excel 2016. It comes in two flavors: text editor and Visual Studio.
+This task pane add-in shows how to create a college budget tracker using the JavaScript APIs in Excel 2016. It comes in two flavors: code editor and Visual Studio.
 
 ![College Budget Tracker Sample](images/CollegeBudgetTracker_tracker.PNG)
 
 ## Try it out
-### Text editor version
+### Code editor version
 
 The simplest way to deploy and test your add-in is to copy the files to a network share.
 
@@ -22,9 +22,9 @@ The simplest way to deploy and test your add-in is to copy the files to a networ
     
     c.  Choose **Trust Center**, and then choose the **Trust Center Settings** button.
     
-    d.  Choose **Trusted App Catalogs**.
+    d.  Choose **Trusted Add-in Catalogs**.
     
-    e.  In the **Catalog Url** box, enter the path to the network share you created in step 1, and then choose **Add Catalog**.
+    e.  In the **Catalog Url** box, enter the path to the network share you created in step 3, and then choose **Add Catalog**.
     
    f.  Select the **Show in Menu** check box, and then choose **OK**. A message appears to inform you that your settings will be applied the next time you start Office. 
         
