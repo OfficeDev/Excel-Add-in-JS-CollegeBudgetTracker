@@ -1,2 +1,22 @@
-﻿/* Page-specific styling */
+﻿.padding {
+    padding: 15px;
+}
+
+.line {
+    height: 2px;
+    color: #0078D7;
+}
+
+.ms-Pivot {
+    color: #E81123;
+}
+
+.ms-Pivot-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.ms-Pivot-content.is-selected {
+    display: block;
+}
 

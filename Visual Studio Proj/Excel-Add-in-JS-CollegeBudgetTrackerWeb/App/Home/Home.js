@@ -11,10 +11,8 @@
 		$(document).ready(function () {
 		    app.initialize();
 
-			$("#tabs").tabs();
-			$(".click-button").button();
-			$('#add-expense').click(addExpense);
-			$('#add-income').click(addIncome);
+		    $('#add-expense').click(addExpense);
+		    $('#add-income').click(addIncome);
 
 		    // If not using Excel 2016, return
 			if (!Office.context.requirements.isSetSupported('ExcelApi', '1.1')) {
@@ -22,6 +20,16 @@
 			    return;
 			}
 
+            // Wire up the Dropdown control
+			if ($.fn.Dropdown) {
+			    $('.ms-Dropdown').Dropdown();
+			}
+
+            // Wire up the Pivot control
+			if ($.fn.Pivot) {
+			    $('.ms-Pivot').Pivot();
+			}
+			
 			createBudgetAnalyzer();
 		});
 	};
@@ -163,6 +171,10 @@
 			dashboardSheet.getRange("C18:D27").format.borders.getItem('EdgeTop').style = 'Continuous';
 			dashboardSheet.getRange("C27:D27").format.font.size = 13;
 			dashboardSheet.getRange("C27:D27").format.font.name = "Rockwell";
+
+		    // Queue commands to autofit rows and columns in a sheet
+			dashboardSheet.getUsedRange().getEntireColumn().format.autofitColumns();
+			dashboardSheet.getUsedRange().getEntireRow().format.autofitRows();
 
 			// Queue commands to create the income chart
 			var incomeChartDataRange = dashboardSheet.getRange("C10:D14");

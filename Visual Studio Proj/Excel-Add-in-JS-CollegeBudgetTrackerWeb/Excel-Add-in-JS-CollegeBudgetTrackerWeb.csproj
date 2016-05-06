@@ -80,6 +80,9 @@
     <Content Include="Images\green_pig_80.png" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\FabricUI\DropDown.js" />
+    <Content Include="Scripts\FabricUI\Pivot.js" />
+    <Content Include="Scripts\FabricUI\TextField.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
