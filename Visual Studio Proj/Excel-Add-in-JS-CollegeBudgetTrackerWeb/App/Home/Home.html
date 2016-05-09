@@ -7,11 +7,16 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<title>College Budget Tracker</title>
+
+    <!-- JQuery -->
     <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js"></script>	
+
+    <!-- Fabric components -->
     <script src="../../Scripts/FabricUI/Pivot.js" type="text/javascript"></script>
     <script src="../../Scripts/FabricUI/TextField.js" type="text/javascript"></script>
     <script src="../../Scripts/FabricUI/DropDown.js" type="text/javascript"></script>
+
     <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
 
 	<!-- To enable offline debugging using a local reference to Office.js, use:                        -->
@@ -28,7 +33,6 @@
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.min.css">
     <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css">
  
-
 </head>
 <body class="ms-font-m">
     
@@ -64,35 +68,40 @@
                             </i>
                         </span> 
                         <span class="ms-Button-label">Add expense</span> 
-                    </button>    
-                        
-                    </div>
+                    </button>                            
+                </div>
+
                 <div class="ms-Pivot-content income">
-                    <label>Description:    </label>
-                    <input type="text" id="income-description" class="right" />
-                    <br />
-                    <br />
-                    <label>Amount </label>
-                    <input type="number" id="income-amount" class="right" />
-                    <br />
-                    <br />
-                    <label>Category</label>
-                    <select class="selectmenu right" id="income-category">
-                        <option value="Wages" selected="selected">Wages</option>
-                        <option value="Financial aid">Financial aid</option>
-                        <option value="From savings">From savings</option>
-                        <option value="Assistance from parents">Assistance from parents</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <button class="click-button" id="add-income">Add</button>
+                    <div class="ms-TextField">
+                        <label class="ms-Label">Description</label> <input class="ms-TextField-field" type="text" id="income-description">
+                        <label class="ms-Label">Amount</label> <input class="ms-TextField-field" type="text" id="income-amount">
+                    </div>
+                    <div class="ms-Dropdown" tabindex="0">
+                        <label class="ms-Label">Category</label>
+                        <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--caretDown"></i>
+                        <select class="ms-Dropdown-select" id="income-category">
+                            <option value="Wages">Wages</option>
+                            <option value="Financial aid">Financial aid</option>
+                            <option value="From savings">From savings</option>
+                            <option value="Assistance from parents">Assistance from parents</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <button class="ms-Button ms-Button--hero" id="add-income">
+                        <span class="ms-Button-icon">
+                            <i class="ms-Icon ms-Icon--plus">
+                            </i>
+                        </span>
+                        <span class="ms-Button-label">Add income</span>
+                    </button>    
                 </div>
             </div>
         </div>
 	</div>
+    <div class="footer">        
+        <div class="brand-text ms-fontColor-white ms-fontWeight-semibold">College Budget Tracker</div>        
+    </div>
+    
 </body>
 </html>
 <!--

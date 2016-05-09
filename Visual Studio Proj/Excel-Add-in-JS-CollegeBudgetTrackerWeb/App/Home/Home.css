@@ -7,16 +7,6 @@
     color: #0078D7;
 }
 
-.ms-Pivot {
-    color: #E81123;
+.header {
+    height: 0px;
 }
-
-.ms-Pivot-content {
-    display: none;
-    margin-top: 20px;
-}
-
-.ms-Pivot-content.is-selected {
-    display: block;
-}
-
