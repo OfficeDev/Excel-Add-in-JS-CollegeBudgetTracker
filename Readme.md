@@ -40,7 +40,7 @@ The simplest way to deploy and test your add-in is to copy the files to a networ
 
     d.  Add some expenses and income using the **Add expenses** and the **Add income** tabs and see how the data and the charts changes dynamically.
     
-      ![College Budget Tracker Sample](images/CollegeBudgetTracker_taskpane.PNG) 
+      ![College Budget Tracker Sample](images/CollegeBudgetTracker_taskpane1.PNG) 
     
 ### Visual Studio version
 1.  Copy the project to a local folder and open the Excel-Add-in-JS-CollegeBudgetTracker.sln in Visual Studio.
@@ -50,7 +50,7 @@ The simplest way to deploy and test your add-in is to copy the files to a networ
 
 3.  Add some expenses and income using the **Add expenses** and the **Add income** tabs and see how the data and the charts changes dynamically.
 
-  ![College Budget Tracker Sample](images/CollegeBudgetTracker_taskpane.PNG) 
+  ![College Budget Tracker Sample](images/CollegeBudgetTracker_taskpane1.PNG) 
 
 
 ### Learn more
