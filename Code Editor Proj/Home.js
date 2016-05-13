@@ -8,9 +8,7 @@
 	Office.initialize = function (reason) {
 		$(document).ready(function () {
 		    app.initialize();
-
-			$("#tabs").tabs();
-			$(".click-button").button();
+            
 			$('#add-expense').click(addExpense);
 			$('#add-income').click(addIncome);
 
@@ -19,9 +17,10 @@
 			    app.showNotification("Need Office 2016 or greater", "Sorry, this add-in only works with newer versions of Excel.");
 			    return;
 			}
-
+            
 			createBudgetAnalyzer();
 		});
+        $(".ms-Pivot").Pivot();
 	};
 
 	function createBudgetAnalyzer() {
@@ -162,6 +161,10 @@
 			dashboardSheet.getRange("C27:D27").format.font.size = 13;
 			dashboardSheet.getRange("C27:D27").format.font.name = "Rockwell";
 
+            // Queue commands to autofit rows and columns in a sheet
+            dashboardSheet.getUsedRange().getEntireColumn().format.autofitColumns();
+            dashboardSheet.getUsedRange().getEntireRow().format.autofitRows();
+            
 			// Queue commands to create the income chart
 			var incomeChartDataRange = dashboardSheet.getRange("C10:D14");
 			var chart = dashboardSheet.charts.add("doughnut", incomeChartDataRange, "auto");

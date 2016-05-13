@@ -1,16 +1,90 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
   <Id>f67b8491-af94-4004-9240-d63b44123f89</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Microsoft</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="College Budget Tracker Sample" />
-  <Description DefaultValue="College Budget Tracker Sample"/>
-  <Capabilities>
-    <Capability Name="Workbook" />
-  </Capabilities>
+  <DisplayName DefaultValue="Excel-Add-in-JS-CollegeBudgetTracker" />
+  <Description DefaultValue="Excel Add-in sample in JavaScript that tracks student income and expenses."/>
+  <IconUrl DefaultValue="https://collegebudgettracker.azurewebsites.net/Images/blue_graph_32.png" />
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  
   <DefaultSettings>
-    <SourceLocation DefaultValue="\\MyShare\CollegeBudgetTracker\Home.html" />
+    <SourceLocation DefaultValue="https://collegebudgettracker.azurewebsites.net/home.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
+  
+  <!--Begin AddinCommandsMode integration-->
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Description resid="residDescription"/>
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="Contoso.GetStarted.Title"/>
+            <Description resid="Contoso.GetStarted.Description"/>
+            <LearnMoreUrl resid="Contoso.GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="Contoso.GroupId">
+                <Label resid="residLabel"/>
+                <Icon>
+                  <bt:Image size="16" resid="icon_16x16"/>
+                  <bt:Image size="32" resid="icon_32x32"/>
+                  <bt:Image size="64" resid="icon_64x64"/>
+                  <bt:Image size="80" resid="icon_80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="Contoso.ButtonId">
+                  <Label resid="residLabelButton"/>
+                  <Supertip>
+                    <Title resid="residLabel"/>
+                    <Description resid="residToolTipDescription"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon_16x16"/>
+                    <bt:Image size="32" resid="icon_32x32"/>
+                    <bt:Image size="64" resid="icon_64x64"/>
+                    <bt:Image size="80" resid="icon_80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="residTaskPane"/>
+                  </Action>
+                </Control>
+              </Group>              
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon_16x16" DefaultValue="https://collegebudgettracker.azurewebsites.net/Images/blue_graph_16.png"/>
+        <bt:Image id="icon_32x32" DefaultValue="https://collegebudgettracker.azurewebsites.net/Images/blue_graph_32.png"/>
+        <bt:Image id="icon_64x64" DefaultValue="https://collegebudgettracker.azurewebsites.net/Images/blue_graph_64.png"/>
+        <bt:Image id="icon_80x80" DefaultValue="https://collegebudgettracker.azurewebsites.net/Images/blue_graph_80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Contoso.GetStarted.LearnMoreUrl" DefaultValue="https://dev.office.com/docs/add-ins/design/add-in-commands"/>
+        <bt:Url id="residTaskPane" DefaultValue="https://collegebudgettracker.azurewebsites.net/home.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Contoso.GetStarted.Title" DefaultValue="College Budget Tracker"/>
+        <bt:String id="residLabel" DefaultValue="College Budget Tracker"/>
+        <bt:String id="residLabelButton" DefaultValue="Track Budget"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residDescription" DefaultValue="Excel Add-in sample in JavaScript that tracks student income and expenses."/>
+        <bt:String id="Contoso.GetStarted.Description" DefaultValue="Click the College Budget Tracker icon on the ribbon, then select the Expenses or Income tab to get started."/>
+        <bt:String id="residToolTipDescription" DefaultValue="Excel Add-in sample in JavaScript that tracks student income and expenses."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
 </OfficeApp>
