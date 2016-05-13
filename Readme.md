@@ -9,12 +9,11 @@ This task pane add-in shows how to create a college budget tracker using the Jav
 ## Try it out
 ### Code editor version
 
-The simplest way to deploy and test your add-in is to copy the files to a network share.
+The simplest way to deploy and test your add-in is to copy the manifest to a network share.
 
-1.  Create a folder on a network share (for example, \\\MyShare\CollegeBudgetTracker) and copy all the files in the Code Editor folder. 
-2.  Edit the <SourceLocation> element of the manifest file so that it points to the share location from step 1. 
-3.  Copy the manifest (CollegeBudgetTrackerManifest.xml) to a network share (for example, \\\MyShare\MyManifests).
-4.  Add the share location that contains the manifest as a trusted app catalog in Excel.
+1.  Create a folder on a network share (for example, \\\MyShare\CollegeBudgetTracker).  
+2.  Copy the manifest (CollegeBudgetTrackerManifest.xml) to a network share (for example, \\\MyShare\MyManifests).
+3.  Add the share location that contains the manifest as a trusted app catalog in Excel.
 
     a.  Launch Excel and open a blank spreadsheet.  
     
@@ -28,19 +27,21 @@ The simplest way to deploy and test your add-in is to copy the files to a networ
     
    f.  Select the **Show in Menu** check box, and then choose **OK**. A message appears to inform you that your settings will be applied the next time you start Office. 
         
-5.  Test and run the add-in. 
+4.  Test and run the add-in. 
 
     a.  In the **Insert tab** in Excel 2016, choose **My Add-ins**. 
     
     b.  In the **Office Add-ins** dialog box, choose **Shared Folder**.
     
-    c.  Choose **College Budget Tracker Sample**>**Insert**. The add-in opens in a task pane and creates the college budget tracker in the active sheet as shown in this diagram. 
+    c.  Click **College Budget Tracker** command in the Home tab. The add-in opens in a task pane and creates the college budget tracker in the active sheet as shown in this diagram. 
       
    ![College Budget Tracker Sample](images/CollegeBudgetTracker_tracker.PNG) 
 
     d.  Add some expenses and income using the **Add expenses** and the **Add income** tabs and see how the data and the charts changes dynamically.
     
       ![College Budget Tracker Sample](images/CollegeBudgetTracker_taskpane1.PNG) 
+
+To use the manifest in your own Add-in, edit the <SourceLocation> element of the manifest file so that it points to the share location of your Home.html file.
     
 ### Visual Studio version
 1.  Copy the project to a local folder and open the Excel-Add-in-JS-CollegeBudgetTracker.sln in Visual Studio.
