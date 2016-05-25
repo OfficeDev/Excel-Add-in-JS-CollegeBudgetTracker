@@ -11,7 +11,7 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Excel-Add-in-JS-CollegeBudgetTracker" />
   <Description DefaultValue="Excel Add-in sample in JavaScript that tracks student income and expenses."/>
-  <IconUrl DefaultValue="~remoteAppUrl/Images/green_pig_32.png" />
+  <IconUrl DefaultValue="~remoteAppUrl/Images/blue_graph_32.png" />
   <Hosts>
     <Host Name="Workbook"/>
   </Hosts>
@@ -66,10 +66,10 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon_16x16" DefaultValue="~remoteAppUrl/Images/green_pig_16.png"/>
-        <bt:Image id="icon_32x32" DefaultValue="~remoteAppUrl/Images/green_pig_32.png"/>
-        <bt:Image id="icon_64x64" DefaultValue="~remoteAppUrl/Images/green_pig_64.png"/>
-        <bt:Image id="icon_80x80" DefaultValue="~remoteAppUrl/Images/green_pig_80.png"/>
+        <bt:Image id="icon_16x16" DefaultValue="~remoteAppUrl/Images/blue_graph_16.png"/>
+        <bt:Image id="icon_32x32" DefaultValue="~remoteAppUrl/Images/blue_graph_32.png"/>
+        <bt:Image id="icon_64x64" DefaultValue="~remoteAppUrl/Images/blue_graph_64.png"/>
+        <bt:Image id="icon_80x80" DefaultValue="~remoteAppUrl/Images/blue_graph_80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Contoso.GetStarted.LearnMoreUrl" DefaultValue="http://dev.office.com/docs/add-ins/design/add-in-commands"/>
