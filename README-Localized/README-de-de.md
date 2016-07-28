@@ -11,8 +11,8 @@ Dieses Aufgabenbereich-Add-In veranschaulicht, wie mithilfe der JavaScript-APIs 
 
 Am einfachsten können Sie Ihr Add-In bereitstellen und testen, indem Sie das Manifest in eine Netzwerkfreigabe kopieren.
 
-1.  Erstellen Sie einen Ordner in einer Netzwerkfreigabe (zum Beispiel „ \\\MyShare\CollegeBudgetTracker”).  
-2.  Kopieren Sie das Manifest (CollegeBudgetTrackerManifest.xml) in eine Netzwerkfreigabe (z.ä B. \\\MyShare\MyManifests).
+1.  Erstellen Sie einen Ordner in einer Netzwerkfreigabe (zum Beispiel „\\\MyShare\CollegeBudgetTracker”).  
+2.  Kopieren Sie das Manifest (CollegeBudgetTrackerManifest.xml) in eine Netzwerkfreigabe (z. B. \\\MyShare\MyManifests).
 3.  Fügen Sie den Freigabepfad, unter dem das Manifest enthalten ist, als vertrauenswürdigen App-Katalog in Excel hinzu.
 
     a. Starten Sie Excel, und öffnen Sie ein leeres Arbeitsblatt.  
@@ -33,7 +33,8 @@ Am einfachsten können Sie Ihr Add-In bereitstellen und testen, indem Sie das Ma
     
   b. Wählen Sie im Dialogfenster **Office-Add-Ins** die Option **Freigegebener Ordner** aus.
     
-  c. Klicken Sie auf der Registerkarte „Start“ auf den Befehl **Studien-Haushaltsplanverfolgung**. The add-in opens in a task pane and creates the college budget tracker in the active sheet as shown in this diagram. 
+  c. Klicken Sie auf der Registerkarte „Start“ auf den Befehl **Studien-Haushaltsplanverfolgung**. Das Add-In wird in einem Aufgabenbereich geöffnet, wie in diesem Diagramm dargestellt.
+  
       
    ![Studien-Haushaltsplanverfolgungsbeispiel](../images/CollegeBudgetTracker_tracker.PNG) 
 
